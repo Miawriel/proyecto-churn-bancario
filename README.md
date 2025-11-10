@@ -4,7 +4,7 @@ Autor/a: Gabriela Mariel Lopez Armenta🎯
 
 
 Objetivo del Proyecto
-El proyecto busca identificar los principales factores de riesgo que impulsan la deserción churn de clientes bancarios y desarrollar el modelo de \textit{Machine Learning} más eficiente para predecir a aquellos clientes con alta probabilidad de abandonar el banco.
+El proyecto busca identificar los principales factores de riesgo que impulsan la deserción churn de clientes bancarios y desarrollar el modelo de Machine Learning más eficiente para predecir a aquellos clientes con alta probabilidad de abandonar el banco.
 
 
 
@@ -13,7 +13,7 @@ Modelo Ganador: El modelo XGBoost Classifier fue el seleccionado.
 
 Criterio de Éxito: El modelo fue el único en superar la métrica crítica del Recall ≥0.50 para la clase "Churn".
 
-Factores de Riesgo (Feature Importance): La Edad del cliente resultó ser el factor individual más determinante para el \textit{churn}, seguido por el Balance y el Número de Productos.
+Factores de Riesgo (Feature Importance): La Edad del cliente resultó ser el factor individual más determinante para el churn, seguido por el Balance y el Número de Productos.
 
 | Métrica Crítica | Regresión Logística | Random Forest | XGBoost (Ganador) || Recall (Clase 1) | 0.20 | 0.47 | 0.55 || AUC Score | 0.77 | 0.87 | 0.85 |
 
@@ -50,6 +50,7 @@ requirements.txt: Dependencias de Python.
 Propuesta_Proyecto.pdf: Documento PDF de la propuesta inicial (LaTeX).
 
 Reporte_Final_Bancario.pdf: Reporte final detallado con conclusiones de negocio (LaTeX).
+
 
 
 
