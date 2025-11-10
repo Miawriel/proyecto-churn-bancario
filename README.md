@@ -28,16 +28,18 @@ Para replicar los resultados y generar los gráficos de Importancia de Caracter�
    ```bash
    git clone [https://github.com/Miawriel/proyecto-churn-bancario](https://github.com/Miawriel/proyecto-churn-bancario)
    cd proyecto-churn-bancario
+Instalar Dependencias: Asegúrate de tener Python instalado.
 
+Bash
 
+pip install -r requirements.txt
+Archivos de Datos: Coloca el archivo Churn_Modelling.csv en la carpeta raíz.
 
+Ejecutar el Script: El script completo generará el entrenamiento de 3 modelos y guardará los gráficos.
 
+Bash
 
-
-
-
-
-
+python proyecto_churn_final.py
 
 
 
