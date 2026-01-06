@@ -1,45 +1,57 @@
-# 📊 Predicción de Deserción de Clientes Bancarios (Churn)
+# Bank Customer Churn Prediction
 
-**Autor/a:** Gabriela Mariel Lopez Armenta
+## Overview
+This project focuses on predicting customer churn in the banking sector using machine learning techniques.  
+Customer churn prediction is a real-world problem widely used by financial institutions to improve customer retention strategies.
 
-## 🎯 Objetivo del Proyecto
+The goal of this project is to identify customers who are more likely to leave the bank based on their demographic and behavioral data.
 
-El proyecto busca identificar los principales factores de riesgo que impulsan la deserción (**churn**) de clientes bancarios y desarrollar el modelo de **Machine Learning** más eficiente para predecir a aquellos clientes con alta probabilidad de abandonar el banco.
+## Problem Statement
+Customer acquisition is expensive. Losing existing customers directly impacts revenue.  
+By predicting churn in advance, banks can take proactive actions such as targeted offers or personalized support.
 
-## 💡 Hallazgos Clave
+This project frames churn prediction as a **binary classification problem**.
 
-1. **Modelo Ganador:** El modelo **XGBoost Classifier** fue el seleccionado, siendo el único que superó la métrica crítica del **Recall** $\geq 0.50$ para la clase "Churn" (obteniendo 0.55).
+## Dataset
+The dataset contains customer information such as:
+- Credit score
+- Geography
+- Gender
+- Age
+- Tenure
+- Balance
+- Number of products
+- Credit card status
+- Estimated salary
 
-2. **Validación de Hipótesis:** La hipótesis de que el compromiso financiero es la causa es validada, aunque la **Edad del cliente** se reveló como el factor individual más determinante para el **churn**, seguido por el Balance y el Número de Productos.
+Target variable:
+- `Exited` (1 = customer left the bank, 0 = customer stayed)
 
-### Comparación de Métricas Clave
+## Technologies Used
+- Python
+- Pandas & NumPy
+- Scikit-learn
+- Matplotlib / Seaborn
+- XGBoost
 
-| **Métrica Crítica** | **Regresión Logística** | **Random Forest** | **XGBoost (Ganador)** | 
-| :--- | :--- | :--- | :--- | 
-| **Recall (Clase 1)** | 0.20 | 0.47 | **0.55** | 
-| **AUC Score** | 0.77 | 0.87 | **0.85** | 
+## Project Workflow
+1. Data cleaning and preprocessing  
+2. Exploratory data analysis  
+3. Feature encoding and scaling  
+4. Model training and comparison  
+5. Model evaluation using classification metrics  
 
-## ⚙️ Cómo Ejecutar el Proyecto
+## Results
+Multiple models were tested.  
+The final model prioritized **recall for the churn class**, aiming to correctly identify customers at risk of leaving.
 
-Para replicar los resultados y generar los gráficos de Importancia de Características y la Curva ROC:
+## Future Improvements
+- Hyperparameter optimization
+- Model explainability (SHAP)
+- Deployment as a simple web application
 
-1. **Clonar el Repositorio:**
-
-   ```bash
-   git clone [https://github.com/Miawriel/proyecto-churn-bancario](https://github.com/Miawriel/proyecto-churn-bancario)
-   cd proyecto-churn-bancario
-2. Instalar Dependencias: Asegúrate de tener Python instalado.
-
-    ```bash
-    pip install -r requirements.txt
-
-3. Archivos de Datos: Coloca el archivo Churn_Modelling.csv en la carpeta raíz.
-
-4. Ejecutar el Script: El script completo generará el entrenamiento de 3 modelos y guardará los gráficos.
-
-   ```bash
-   python proyecto_churn_final.py
-      
+## Author
+Mariel Lopez A.
 
 
 
