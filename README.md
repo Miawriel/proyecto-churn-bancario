@@ -1,63 +1,123 @@
 # Bank Customer Churn Prediction
 
-## Overview
-This project focuses on predicting customer churn in the banking sector using machine learning techniques.  
-Customer churn prediction is a real-world problem widely used by financial institutions to improve customer retention strategies.
+Machine learning project to predict customer churn in a retail banking context, using supervised classification models and a structured end-to-end ML pipeline.
 
-The goal of this project is to identify customers who are more likely to leave the bank based on their demographic and behavioral data.
+---
 
 ## Problem Statement
-Customer acquisition is expensive. Losing existing customers directly impacts revenue.  
-By predicting churn in advance, banks can take proactive actions such as targeted offers or personalized support.
 
-This project frames churn prediction as a **binary classification problem**.
+Customer churn represents a significant challenge for banks, as retaining existing customers is often more cost-effective than acquiring new ones.  
+The goal of this project is to predict whether a customer is likely to leave the bank, enabling proactive retention strategies.
+
+---
 
 ## Dataset
-The dataset contains customer information such as:
-- Credit score
-- Geography
-- Gender
-- Age
-- Tenure
-- Balance
-- Number of products
-- Credit card status
-- Estimated salary
+
+The dataset contains customer-level information, including:
+
+- Demographic data
+- Account balance
+- Product usage
+- Activity status
 
 Target variable:
-- `Exited` (1 = customer left the bank, 0 = customer stayed)
+- **Exited**  
+  - `1` → Customer left the bank  
+  - `0` → Customer stayed  
 
-## Technologies Used
-- Python
-- Pandas & NumPy
-- Scikit-learn
-- Matplotlib / Seaborn
+---
+
+## Approach
+
+The project follows a structured machine learning workflow:
+
+1. **Data preprocessing**
+   - Removal of non-informative identifiers
+   - One-hot encoding of categorical variables
+   - Feature scaling
+
+2. **Train-test split**
+   - Applied before scaling to avoid data leakage
+
+3. **Model training and evaluation**
+   - Multiple classification models were trained and compared
+   - Emphasis on metrics relevant to churn prediction
+
+---
+
+## Models and Results
+
+The following models were trained and evaluated:
+
+- Logistic Regression (baseline)
+- Random Forest
 - XGBoost
 
-## Project Workflow
-1. Data cleaning and preprocessing  
-2. Exploratory data analysis  
-3. Feature encoding and scaling  
-4. Model training and comparison  
-5. Model evaluation using classification metrics  
+While Random Forest achieved the highest AUC score, **XGBoost provided the best recall for the churn class**, which is particularly important in churn prediction scenarios where failing to identify a customer at risk is more costly than a false positive.
 
-## Results
-Multiple models were tested.  
-The final model prioritized **recall for the churn class**, aiming to correctly identify customers at risk of leaving.
+### Performance Summary
 
-## Future Improvements
-- Hyperparameter optimization
-- Model explainability (SHAP)
-- Deployment as a simple web application
+- **Best AUC**: Random Forest (0.865)
+- **Best Recall for churn class**: XGBoost (0.55)
+- **Best F1-score for churn class**: XGBoost
 
-## Author
-Mariel Lopez A.
+This trade-off makes XGBoost the most suitable model from a business perspective.
 
+---
 
+## Key Takeaways
 
+- Accuracy alone is not sufficient for churn prediction.
+- Recall for the churn class is a more relevant metric in this context.
+- Ensemble methods significantly outperform baseline linear models.
+- XGBoost provides the best balance between predictive performance and business impact.
 
+---
 
+## Project Structure
 
+```
+.
+├── src/
+│   ├── preprocess.py
+│   ├── train.py
+│   └── evaluate.py
+├── Churn_Modelling.csv
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## How to Run
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Train the models:
+
+```bash
+python src/train.py
+```
+
+Evaluate model performance:
+
+```bash
+python src/evaluate.py
+```
+
+---
+
+## Tech Stack
+
+- Python
+- Pandas
+- Scikit-learn
+- XGBoost
+- Matplotlib
 
 
 
